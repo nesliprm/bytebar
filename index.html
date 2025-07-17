@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A multi-search cocktail generator that uses ingredients of your choice!"
+    />
+    <title>byteBAR</title>
+    <link rel="icon" href="src/assets/favicon.png" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/ea89842d86.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tiny5&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="
+https://cdn.jsdelivr.net/npm/axios@1.6.2/dist/axios.min.js
+"></script>
+
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="top-panel">
+        <h1 class="bytebar-header">
+          <a href="/index.html" title="byteBar main">byteBAR</a>
+        </h1>
+        <p>
+          <strong
+            >Welcome to byteBAR — a virtual mixologist that can craft
+            cocktails!</strong
+          >
+          Type an ingredient to search the collection, let our boozy bot whip
+          something up with AI Search, or click Random for a surprise creation!
+        </p>
+        <br />
+
+        <div class="search-form" id="search-form">
+          <input
+            class="input-field"
+            type="text"
+            id="ingredient-input"
+            placeholder="Type an ingredient"
+          />
+          <div class="button-group">
+            <button
+              class="button"
+              id="search-cocktail-btn"
+              title="Search by ingredient"
+            >
+              SEARCH <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button
+              class="button"
+              id="ai-cocktail-btn"
+              title="Search by ingredient with AI"
+            >
+              AI SEARCH <i class="fa-solid fa-robot"></i>
+            </button>
+            <button
+              class="button"
+              id="random-cocktail-btn"
+              title="Show a random cocktail (no ingredient needed)"
+            >
+              RANDOM <i class="fa-solid fa-dice"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-panel" id="cocktail-details"></div>
+    </div>
+    <footer>
+      <small>Coded by ▼ Nesli Parmaksizoglu</small>
+    </footer>
+    <script src="src/config.js"></script>
+    <script src="src/index.js"></script>
+  </body>
+</html>
