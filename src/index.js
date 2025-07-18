@@ -159,11 +159,14 @@ function generateAiCocktail(event) {
   //// Weird input check for AI search
   const tooWeird =
     userInput.length > 3 &&
-    !/[aeiouy]/i.test(userInput) && // include 'y' as semi-vowel
-    /^[a-zA-Z\s]+$/.test(userInput); // only alphabetic
+    !/[aeiou]/i.test(userInput) &&
+    /^[a-zA-Z\s]+$/.test(userInput);
 
-  const tooltip = document.getElementById("weird-tooltip");
-  tooltip.style.display = tooWeird ? "block" : "none";
+  if (tooWeird) {
+    document.getElementById("cocktail-details").innerHTML =
+      '<i class="fa-solid fa-comment-dots"></i> This doesn’t look like a typical ingredient, but let’s see what the AI comes up with...';
+    showBottomPanel();
+  }
 
   //// API call
   axios
@@ -174,7 +177,6 @@ function generateAiCocktail(event) {
       clearTimeout(timeout);
       const aiHTML = response.data.answer;
       document.getElementById("cocktail-details").innerHTML = aiHTML;
-      tooltip.style.display = "none";
       showBottomPanel();
     })
     .catch((error) => {
@@ -182,7 +184,6 @@ function generateAiCocktail(event) {
       console.error("Netlify function error:", error);
       document.getElementById("cocktail-details").innerHTML =
         '<i class="fa-solid fa-triangle-exclamation"></i> Something went wrong with the AI cocktail. Please try again.';
-      tooltip.style.display = "none";
       showBottomPanel();
     });
 }
