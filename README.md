@@ -1,3 +1,5 @@
+<h1>byteBAR</h1>
+
 <h2>Features</h2>
 
 <p>This app offers three ways to discover cocktails:</p>
@@ -37,9 +39,9 @@
 </p>
 
 <ul>
-  <li>✅ <strong>No API keys</strong> are exposed in the frontend or committed to the repository</li>
-  <li>✅ API calls are routed through a secure, serverless backend (<code>/netlify/functions/ai-cocktail</code>)</li>
-  <li>✅ Sensitive credentials are managed via <strong>Netlify environment variables</strong></li>
+  <li><strong>No API keys</strong> are exposed in the frontend or committed to the repository</li>
+  <li>API calls are routed through a secure, serverless backend (<code>/netlify/functions/ai-cocktail</code>)</li>
+  <li>Sensitive credentials are managed via <strong>Netlify environment variables</strong></li>
 </ul>
 
 <p>
