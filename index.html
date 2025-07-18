@@ -61,6 +61,13 @@ https://cdn.jsdelivr.net/npm/axios@1.6.2/dist/axios.min.js
             placeholder="Type an ingredient"
           />
 
+          <div id="weird-tooltip" style="display: none">
+            <p class="tooltip">
+              <i class="fa-solid fa-comment-dots"></i> This doesn’t look like a
+              typical ingredient... but let’s see what the AI comes up with!
+            </p>
+          </div>
+
           <div class="button-group">
             <button
               class="button"
@@ -84,14 +91,6 @@ https://cdn.jsdelivr.net/npm/axios@1.6.2/dist/axios.min.js
               RANDOM <i class="fa-solid fa-dice"></i>
             </button>
           </div>
-          <!--  -->
-          <!--  -->
-          <div id="weird-tooltip" class="tooltip" style="display: none">
-            <i class="fa-solid fa-comment-dots"></i> This doesn’t look like a
-            typical ingredient... but let’s see what the AI comes up with!
-          </div>
-          <!--  -->
-          <!--  -->
         </div>
       </div>
       <div class="bottom-panel" id="cocktail-details"></div>
