@@ -158,13 +158,14 @@ function generateAiCocktail(event) {
 
   //// Weird input check for AI search
   const tooWeird =
-    userInput.length > 3 &&
-    !/[aeiou]/i.test(userInput) &&
-    /^[a-zA-Z\s]+$/.test(userInput);
+    userInput.length > 4 &&
+    !/[aeiouy]/i.test(userInput) &&
+    /^[a-zA-Z0-9\s]+$/.test(userInput) &&
+    !/\d{3,}/.test(userInput);
 
   if (tooWeird) {
     document.getElementById("cocktail-details").innerHTML =
-      '<i class="fa-solid fa-comment-dots"></i> This doesn’t look like a typical ingredient, but let’s see what the AI comes up with...';
+      '<i class="fa-solid fa-comment-dots"></i> This ingredient seems a bit unusual… but letting it through.';
     showBottomPanel();
   }
 
