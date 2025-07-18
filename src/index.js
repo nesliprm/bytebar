@@ -1,5 +1,4 @@
 isRandomSearch = false;
-isTooWeird = false;
 
 // Display cocktail
 const displayCocktailDetails = (drink) => {
@@ -164,7 +163,9 @@ function generateAiCocktail(event) {
     /^[a-zA-Z\s]+$/.test(userInput);
 
   if (tooWeird) {
-    isTooWeird = true;
+    document.getElementById("cocktail-details").innerHTML =
+      '<i class="fa-solid fa-comment-dots"></i> This doesn’t look like a typical ingredient, but let’s see what the AI comes up with...';
+    showBottomPanel();
   }
 
   //// API call
@@ -175,21 +176,7 @@ function generateAiCocktail(event) {
     .then((response) => {
       clearTimeout(timeout);
       const aiHTML = response.data.answer;
-      let message = "";
-
-      if (isTooWeird) {
-        message =
-          '<p><i class="fa-solid fa-comment-dots"></i> This doesn’t look like a typical ingredient... but here’s what we got:</p>';
-        isTooWeird = false;
-      }
-
-      const fullContent = `
-    ${message}
-    ${aiHTML}
-  `;
-
-      document.getElementById("cocktail-details").innerHTML = fullContent;
-
+      document.getElementById("cocktail-details").innerHTML = aiHTML;
       showBottomPanel();
     })
     .catch((error) => {
