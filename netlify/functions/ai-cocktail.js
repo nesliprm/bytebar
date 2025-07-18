@@ -1,7 +1,20 @@
 const axios = require("axios");
 
 exports.handler = async function (event, context) {
-  const { userInput } = JSON.parse(event.body);
+  console.log("Incoming event body:", event.body);
+
+  let body;
+  try {
+    body = typeof event.body === "string" ? JSON.parse(event.body) : event.body;
+  } catch (parseError) {
+    console.error("Failed to parse body:", parseError);
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error: "Invalid request body" }),
+    };
+  }
+
+  const { userInput } = body;
 
   const messages = [
     {
