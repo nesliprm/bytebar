@@ -1,6 +1,6 @@
 <h1>byteBAR</h1>
 
-<h2>Features</h2>
+<h3>Features</h3>
 <p>This app offers three ways to discover cocktails:</p>
 
 <h3>Random Cocktail</h3>
