@@ -4,7 +4,7 @@
 
 <h3>Random Cocktail</h3>
 <p>
-  Click the <strong>“Surprise Me”</strong> button to receive a randomly selected cocktail from the database.
+  Click the <strong>“Random”</strong> button to receive a randomly selected cocktail from the database.
   A typewriter animation sets the mood while your drink is being “crafted.”
 </p>
 
@@ -18,14 +18,14 @@
 <p>
   Feeling adventurous? Enter an ingredient and let the AI invent a brand-new cocktail just for you!
   <br>
-  This feature uses <strong>OpenAI’s GPT-3.5</strong> to create unique cocktail recipes with HTML formatting.
+  This feature uses <strong>OpenAI’s GPT-3.5</strong> to create unique cocktail recipes.
 </p>
 <p>
   API communication is securely handled via a <a href="https://docs.netlify.com/functions/overview/" target="_blank">Netlify Function</a>,
   keeping the OpenAI key hidden from the frontend.
 </p>
 
-<h3>AI Cocktail Feature (Tech Overview)</h3>
+<h4>AI Feature (Tech Overview)</h4>
 
 <p>
   The AI cocktail generator is powered by the <strong>OpenAI GPT-3.5 API</strong> and securely integrated using a 
