@@ -183,9 +183,12 @@ function generateAiCocktail(event) {
         isTooWeird = false;
       }
 
-      document.getElementById(
-        "cocktail-details"
-      ).innerHTML = `${message}${aiHTML}`;
+      const fullContent = `
+    ${message}
+    ${aiHTML}
+  `;
+
+      document.getElementById("cocktail-details").innerHTML = fullContent;
 
       showBottomPanel();
     })
