@@ -147,7 +147,7 @@ function generateAiCocktail(event) {
   }
 
   showBottomPanel();
-  showTypewriterLoading();
+  // showTypewriterLoading();
 
   //// Timeout function
   const timeout = setTimeout(() => {
