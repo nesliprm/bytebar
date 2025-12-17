@@ -32,7 +32,7 @@ exports.handler = async function (event, context) {
     const response = await axios.post(
       "https://api.openai.com/v1/responses",
       {
-        model: "gpt-5-mini",
+        model: "gpt-5.2",
         input: [
           {
             role: "system",
@@ -53,7 +53,7 @@ exports.handler = async function (event, context) {
             ],
           },
         ],
-        // temperature: 0.8,
+        temperature: 0.8,
         max_output_tokens: 500,
       },
       {
@@ -64,9 +64,9 @@ exports.handler = async function (event, context) {
       }
     );
 
-    const aiHTML = response.data.output
-      ?.flatMap((item) => item.content || [])
-      ?.find((block) => typeof block.text === "string")?.text;
+    const aiHTML = response.data.output?.[0]?.content?.find(
+      (c) => c.type === "output_text"
+    )?.text;
 
     return {
       statusCode: 200,
