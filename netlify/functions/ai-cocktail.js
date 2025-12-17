@@ -71,7 +71,8 @@ exports.handler = async function (event, context) {
       body: JSON.stringify({ answer: aiHTML }),
     };
   } catch (error) {
-    console.error("Function error:", error.message);
+    console.error("Function error:", error.response?.data || error);
+
     return {
       statusCode: 500,
       body: JSON.stringify({ error: "AI cocktail generation failed." }),
