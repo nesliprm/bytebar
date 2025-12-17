@@ -53,7 +53,7 @@ exports.handler = async function (event, context) {
             ],
           },
         ],
-        temperature: 0.8,
+        // temperature: 0.8,
         max_output_tokens: 500,
       },
       {
