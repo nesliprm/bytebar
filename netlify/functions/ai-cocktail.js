@@ -64,7 +64,9 @@ exports.handler = async function (event, context) {
       }
     );
 
-    const aiHTML = response.data.output_text;
+    const aiHTML = response.data.output?.[0]?.content?.find(
+      (c) => c.type === "output_text"
+    )?.text;
 
     return {
       statusCode: 200,
