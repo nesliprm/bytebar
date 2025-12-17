@@ -32,7 +32,7 @@ exports.handler = async function (event, context) {
     const response = await axios.post(
       "https://api.openai.com/v1/responses",
       {
-        model: "gpt-5.2",
+        model: "gpt-5-mini",
         input: [
           {
             role: "system",
