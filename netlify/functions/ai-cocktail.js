@@ -38,7 +38,7 @@ exports.handler = async function (event, context) {
             role: "system",
             content: [
               {
-                type: "text",
+                type: "input_text",
                 text: "You are an HTML generator for a cocktail app. Output only raw HTML and nothing else. Do NOT use <ul>, <li>, <p>, or any indentation. Instead, use this format exactly:\n<h1>Cocktail Name</h1><br><div>- ingredient 1<br>- ingredient 2<br>- ingredient 3<br></div><br><div>Instructions go here as plain text with no formatting tags.</div>\nDO NOT add images, styles, or extra tags. DO NOT use tabs or indentations.",
               },
             ],
@@ -47,7 +47,7 @@ exports.handler = async function (event, context) {
             role: "user",
             content: [
               {
-                type: "text",
+                type: "input_text",
                 text: `You are a quirky mixologist. Invent a unique cocktail recipe using ${userInput} as one of the ingredients. Make it creative but drinkable by humans.`,
               },
             ],
